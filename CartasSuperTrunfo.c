@@ -18,7 +18,7 @@ int main(){
     scanf("%s", &codigo);
     printf("digite a cidade: \n");
     scanf("%s", &cidade);
-    printf("sua pib: \n");
+    printf("seu pib: \n");//ajuste
     scanf("%f", &Pib);
     printf("sua populaçao:\n");
     scanf("%i", &populacao);
@@ -38,13 +38,13 @@ int main(){
 
     printf("cidade: %s \n", cidade);
 
-    printf("pib: %f $\n", Pib);
+    printf("pib: %.2f $\n", Pib);//ajuste 
 
     printf("populaçao: %i \n", populacao);
 
     printf("densidade populacional: %i hab/km²\n", calcDensidade(populacao,area));
 
-    printf("area: %f km²\n", area);
+    printf("area: %.2f km²\n", area);//ajuste 
 
     printf("pontos turisticos: %i \n", pontosTuristicos);
 
