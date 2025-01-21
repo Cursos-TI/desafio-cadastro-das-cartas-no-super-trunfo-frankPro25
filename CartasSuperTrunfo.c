@@ -1,6 +1,6 @@
 #include <stdio.h>
 int calcDensidade(int populacao,float area){
-    int dens=(int)populacao/area;
+    int dens=populacao/(int)area;
     return dens;
 }
 int calcPib(float pib,int populacao){
@@ -20,7 +20,7 @@ int main(){
     scanf("%s", &codigo);
     printf("digite a cidade: \n");
     scanf("%s", &cidade);
-    printf("seu pib: \n");//ajuste
+    printf("seu pib: \n");
     scanf("%f", &Pib);
     printf("sua populaçao:\n");
     scanf("%i", &populacao);
@@ -30,24 +30,25 @@ int main(){
     scanf("%i", &pontosTuristicos);
     
     printf("\nDados da carta\n\n");
+    printf(" _______________________________________________\n");//melhora aparencia no console
+    printf("|       estado         |%-24s|\n", estado);
 
-    printf("estado: %s \n", estado);
+    printf("|   codigo da carta    |%s%-23s|\n", estado , codigo);
 
-    printf("codigo da carta:%s%s \n", estado,codigo);
+    printf("|       cidade         |%-24s|\n", cidade);
 
-    printf("cidade: %s \n", cidade);
+    printf("|        area          |%-21.2f%s|\n", area , "km²");
 
-    printf("area: %.2f km²\n", area); //ajuste 
+    printf("|         pib          |%-23.2f%s|\n", Pib,"$"); 
 
-    printf("pib: %.2f $\n", Pib); 
+    printf("|    pib per capita    |%-24i|\n", calcPib(Pib,populacao),"$");
 
-    printf("pib per capita: %i $\n", calcPib(Pib,populacao));//nova funcao
+    printf("|       populaçao      |%-24i|\n", populacao);
 
-    printf("populaçao: %i \n", populacao);
+    printf("|densidade populacional|%-17i%s|\n", calcDensidade(populacao,area),"hab/km²");
 
-    printf("densidade populacional: %i hab/km²\n", calcDensidade(populacao,area));
-
-    printf("pontos turisticos: %i \n", pontosTuristicos);
+    printf("|  pontos turisticos   |%-24i| \n", pontosTuristicos);
+    printf("|_______________________________________________|\n");
 
 }
 
