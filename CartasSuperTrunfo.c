@@ -1,10 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
 int calcDensidade(int populacao,float area){
     int dens=(int)populacao/area;
     return dens;
 }
-
+int calcPib(float pib,int populacao){
+    int PibPer=(int)pib/populacao;
+    return PibPer;
+}  
 int main(){
     printf("ola,mundo\n");
     int populacao,pontosTuristicos;
@@ -26,9 +28,6 @@ int main(){
     scanf("%f", &area);
     printf("pontos turisticos: \n");
     scanf("%i", &pontosTuristicos);
-    //limpar tela
-    //system("clear");
-    //impressao dos dados
     
     printf("\nDados da carta\n\n");
 
@@ -38,13 +37,15 @@ int main(){
 
     printf("cidade: %s \n", cidade);
 
-    printf("pib: %.2f $\n", Pib);//ajuste 
+    printf("area: %.2f km²\n", area); //ajuste 
+
+    printf("pib: %.2f $\n", Pib); 
+
+    printf("pib per capita: %i $\n", calcPib(Pib,populacao));//nova funcao
 
     printf("populaçao: %i \n", populacao);
 
     printf("densidade populacional: %i hab/km²\n", calcDensidade(populacao,area));
-
-    printf("area: %.2f km²\n", area);//ajuste 
 
     printf("pontos turisticos: %i \n", pontosTuristicos);
 
