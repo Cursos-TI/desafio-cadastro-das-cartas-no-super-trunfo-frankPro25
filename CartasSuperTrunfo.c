@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+int calcDensidade(int populacao,float area){
+    int dens=(int)populacao/area;
+    return dens;
+}
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
-int main() {
-    
+int main(){
     printf("ola,mundo\n");
-    int populaçao,pontosTuristicos;
+    int populacao,pontosTuristicos;
     float area,Pib;
-    char estado,cidade[100],codigo[100];
+    char estado[2],cidade[100],codigo[100];
 
     //gravar dados
     printf("digite o estado: \n");
@@ -24,13 +21,15 @@ int main() {
     printf("sua pib: \n");
     scanf("%f", &Pib);
     printf("sua populaçao:\n");
-    scanf("%i", &populaçao);
+    scanf("%i", &populacao);
+    printf("area: \n");
+    scanf("%f", &area);
     printf("pontos turisticos: \n");
     scanf("%i", &pontosTuristicos);
     //limpar tela
     //system("clear");
     //impressao dos dados
-
+    
     printf("\nDados da carta\n\n");
 
     printf("estado: %s \n", estado);
@@ -39,11 +38,15 @@ int main() {
 
     printf("cidade: %s \n", cidade);
 
-    printf("pib: %f \n", Pib);
+    printf("pib: %f $\n", Pib);
 
-    printf("populaçao: %f \n", populaçao);
+    printf("populaçao: %i \n", populacao);
+
+    printf("densidade populacional: %i hab/km²\n", calcDensidade(populacao,area));
+
+    printf("area: %f km²\n", area);
 
     printf("pontos turisticos: %i \n", pontosTuristicos);
 
-    return 0;
 }
+
